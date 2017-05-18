@@ -1,0 +1,105 @@
+Perbedaan SQL dan NoSQL
+
+- Hampir semua program yang dibuat pasti menggunakan database dalam pengerjaannya, database atau basis data disini digunakan untuk menyimpan data-data. 
+- Database ini memiliki skala di mulai dari kecil sampai sangat besar seperti Big Data.
+- Skala terkecil mungkin di dapatkan dari pengumpulan data pembelian barang perhari dan yang terbesar mungkin di dapatkan dari kebiasaan dari para pembeli. 
+- Untuk ukuran kecil masih memungkinkan penggunakan Excel atau spreadsheet sebagai basis data, tetapi untuk skala yang besar hal ini agak riskan untuk dilakukan. 
+- Dan untuk melakukan penyimpanan ini dibutuhkan sebuah Basis Data yang sangat mumpuni atau tangguh yang disesuaikan dengan kebutuhan. 
+- Hal ini untuk menjaga skalabilitas (ketersediaan) data, kecepatan pengolahan data, dan keamanan data yang di simpan di dalam basis data. 
+- Untuk itu muncul lah perusahaan – perusahaan yang mengeluarkan produk produk basis data yang di peruntukan pengolahan data. 
+- Sebagai contoh Oracle dengan produk Oracle database-nya mereka, lalu IBM dengan Db2, Microsoft dengan SQL Server, dan terakhir ada MySQL. 
+- Selain itu ada lagi produk – produk pengolahan database.
+
+Pengolahan database dilakukan menggunakan bahasa SQL. 
+
+- Bahasa ini menjadi salah satu pondasi dari kelahiran dari database. 
+- Dan penggunaannya pun masih digunakan sampai sekarang. 
+- Tetapi trend saat ini arah penggunaan SQL mulai tergerus dengan kehadiran NoSQL.
+- Penggunaan NoSQL mulai menggerus keberadaan MySQL, Oracle, SQL Server untuk kasus kasus tertentu. 
+- Hal ini dikarenakan penggunaan yang lebih mudah dan kemampuan yang lebih baik pada kasus kasus tertentu. 
+- Sebagai contoh penggunaan Hadoop sebagai basis data dalam skala besar mulai menggantikan Oracle dan SQL Server, dan Mongodb mulai bersaing ketat dengan penggunaan MySQL.
+
+- Database relasional adalah koleksi data terstruktur yang disajikan lewat tabel², dimana tabel² tersebut dapat saling berhubungan (relasi). 
+- Tipe ini adalah bentuk basis data yang konvensional. 
+- Saat seseorang menyebut kata database, kemungkinan besar orang umum akan membayangkan database relasional (sekumpulan tabel²). 
+- contohnya MySQL, PostGreSQL, SqlLite, Microsoft Sql Server, dll. 
+- RDBMS (Relasional Database Management System) fokus pada konsep ACID.
+
+- Atomicity: Suatu proses selesai secara menyeluruh/tidak.
+- Consistency: Semua proses (transaction) yang terjadi di database harus memiliki state yang jelas. Setiap data yang disimpan harus memenuhi semua constraint, Cascades, dan triggers.
+- Isolation: Sebuah proses tidak boleh mempengaruhi proses lain.
+- Durability: Proses yang  telah selesai harus bersifat permanen, walau aplikasinya di restart.
+
+- Sedangkan NoSQL adalah tipe penyimpanan data selain yang berwujud tabular(tabel²), NoSQL tidak mengikuti prinsip (ACID) RDBMS sepenuhnya. 
+- Lalu kalau bukan ACID, apakah prinsip utama NoSQL ?
+
+NoSQL, menurut Eric Brewer menganut prinsip BASE:
+
+- Basic Availability: Setiap request sekedar mendapat garansi “response”: Sukses/Gagal.
+    Soft State: State NoSQL bisa berubah secara dinamis tanpa input manual untuk meyakinkan eventual consistency.
+    Eventual Consistency: Untuk “sementara” waktu NoSQL mungkin tidak konsisten (Akan diabahas kemudian maksud & contohnya).
+
+NoSQL bukan berarti “No SQL” atau “bukan SQL”/tidak mendukung bahasa Query, tapi “Not-Only SQL”. Masudnya database NoSQL tetap memiliki (support) ‘semacam’ bahasa Query, namun dalam bentuk (terminology yang berbeda). Beberapa literature bahkan tidak menggolongkan NoSQL sebagai suatu bentuk database.  NoSQL bisa berupa Document (e.g. MongoDB), Key-Value (e.g. CouchDB), Graph (e.g. Neo4J), dsb.
+
+Penggunaan NoSQL saat ini tidak ditujukan untuk menjadi pengganti dari Basis data Relational atau lebih dikenal dengan SQL (Structured Query Languange). Karena NoSQL dikembangkan untuk memecahkan masalah – masalah yang dihadapi oleh database dengan skema relasional.
+
+    Perbedaan utama yang menyolok antara SQL dan NoSQL ada di dalam cara penulisan database mereka. Jika SQL menggunakan relasional sebagai penyambung antara data – data di dalam tabel database mereka. Dan NoSQL tidak menggunakan Relasional sebagai cara mereka untuk menyambungkan antar data mereka. NoSQL menggunakan 4 metode dalam cara mereka untuk menstored data, Key Values stores, Document oriented, Table Oriented, dan terakhir Graph Oriented
+    Perbedaan yang kedua NoSQL tidak menggunakan Schema relational, jika di dalam SQL kita harus mendefinisikan table yang akan digunakan. Berbeda dengan SQL, NoSQL tidak perlu untuk mendefinisikan terlebih dahulu Table yang akan digunakan.
+    Ketiga NoSQL memiliki kemampuan “elastisâ yang lebih baik dibandingkan SQL. Untuk menambah jumlah server basis data di dalam NoSQL, lebih mudah karena kita tidak perlu mendapatkan downtime yang terjadi.
+    Integrated Caching, NoSQl memiliki kemampuan untuk mentransformasikan data dengan lebih cepat hal ini dikarenakan NoSQL menggunakan cache-nya di dalam sistem memori.
+
+Dari terminologi, SQL dan NoSQL mempunyai beberapai istilah yang berbeda.
+
+relasional_vs_nosql
+
+Jenis metode yang digunakan NoSQL untuk menstored Database:
+
+    Key Value Stores digunakan di NoSQL, Key Values ini berfungsi untuk menyimpan key unique, sebagai penanda index. Dan penggunaanya boleh terstruktur dan tidak terstruktur.
+    Document Oriented ,dibandingkan menggunakan tabel sebagai struktur data yang akan disimpan, NoSQL menggunakan Document Oriented sebagai struktur penyimpanannya. Dengan begini kita bia menambahkan field dengan panjang value dengan lebih mudah,flexible tidak terlalu terikat dengan ukuran dari strktur tabel.
+    Table Oriented, NoSQL menggunakan Tabel sebagai cara mereka untuk men-stored data mereka. Cara ini digunakan oleh Google Big Table.
+    Graph database, cara terakhir menggunakan konsep graph sebagai cara melakukan stored di dalam database NoSQL. Di antara ketiga yang lain, cara Graph masih terbilang baru di dalam implementasinya.
+
+Beberapa contoh NoSQL:
+
+    Hbase
+    Hypertable
+    Clouddata
+    MongoDB
+    CouchDB
+     Neo4j
+    FlockDB
+    dll
+
+Aplikasi yg menggunakan NoSQL
+
+    Facebook menggunakan Cassandra
+    Tweeter menggunakan FlockDb
+    Linkedlin menggunakan Voldemort
+    Google menggunakan Bigtable
+    Amazon menggunakan SimpleDB
+    Dll
+
+Sampai saat ini tercatat ada 150 Database yang menggunakan konsep NoSQL. Dengan begini sudah mulai banyak varian – varian dari aplikasi database yang menggunakan konsep NoSQL. Tetapi hal ini tidak menandakan bahwa penggunaan SQL akan digantikan oleh NoSQL, karena hal ini mempertimbangkan kebutuhan mana yang harus digunakan. Karena baik database yang menggunakan relational ataupun non-relational (NoSQL) memiliki kelebihan masing – masing.
+
+Ada beberapa istilah yang muncul pada tahun 2003-2006 ketika Google terkendala dengan data yang semakin membesar. Istilah² yang dijelaskan dalam artikel ilmiah ini terkait dengan perkembangan NoSQL saat ini.
+
+    Google File System, 2003,
+    Chubby, 2006,
+    MapReduce, 2004, dan
+    Big Data, 2006.
+
+Artikel/paper² tersebut kemudian memicu perkembangan beberapa project Open Source untuk data besar:
+
+    Lucene: Java-based indexing dan search engine,
+    Hadoop: Untuk Reliable (terpercaya), scalable (Untuk data besar), distributed computing (data yang tidak terpusat),
+    Cassandra: Scalable, multi-master database with no single point of failure,
+    ZooKeeper: High performance coordination service for distributed applications,
+    Pig: High level dataflow language and execution framework for parallel computation.
+
+Kesimpulan:
+
+    NoSQL dan SQL database memiliki +/- masing².
+    Keduanya saling melengkapi dan bukannya menggantikan.
+    NoSQL lebih cocok untuk data yang memiliki volume & velocity besar serta variety yang beragam.
+    NoSQL secara umum bukanlah analytic engine seperti Hadoop.
+    Perpaduan penggunaan database NoSQL dan SQL yang tepat tidak hanya akan meningkatkan performa, namun juga meng-optimalkan biaya (cost) infrastruktur
