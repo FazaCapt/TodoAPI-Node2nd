@@ -53,6 +53,7 @@ Documentation:
 7. mongoose validators: 'http://mongoosejs.com/docs/validation.html'
 8. mongoose schema: 'http://mongoosejs.com/docs/guide.html'
 9. http status : 'https://httpstatuses.com/'
+10. mongoose queris: 'http://mongoosejs.com/docs/queries.html'
 
 Penjelasan:
 1. noSql mongoDB
