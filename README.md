@@ -41,6 +41,7 @@ Documentation:
 2. reference: 'http://mongodb.github.io/node-mongodb-native/2.2/'
 3. API: 'http://mongodb.github.io/node-mongodb-native/2.2/api/' (Ini sangat bermanfaat untuk buat database)
 4. github: 'https://github.com/mongodb/node-mongodb-native'
+5. MongoDB Update Operators: 'https://docs.mongodb.com/manual/reference/operator/update/'
 
 Penjelasan:
 1. noSql mongoDB
