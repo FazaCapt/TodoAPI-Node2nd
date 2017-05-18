@@ -37,6 +37,10 @@ Install:
 5. npm install mongoose 'https://www.npmjs.com/package/mongoose'
 6. npm install express 'https://www.npmjs.com/package/express'
 7. npm install body-parser 'https://www.npmjs.com/package/body-parser'
+8. npm install expect 'https://www.npmjs.com/package/expect'
+9. npm install mocha 'https://www.npmjs.com/package/mocha'
+10. npm install supertest 'https://www.npmjs.com/package/supertest'
+11. npm install nodemon 'https://www.npmjs.com/package/nodemon'
 
 
 Documentation: 

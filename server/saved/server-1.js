@@ -1,5 +1,5 @@
-// List Resources - GET /todos 7:09
-
+// Resource Creation Endpoint - POST /todos 18:08
+// Testing POST /todos 19:50
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -10,27 +10,24 @@ var { User } = require('./models/user');
 var app = express();
 
 app.use(bodyParser.json());
+//json nya harus huruf kecil jangan huruf capital
 
 app.post('/todos', (req, res) => {
+    // console.log(req.body);
 
-    var todo = new Todo({
-        text: req.body.text
+    var todo = new Todo({ //Todo itu diambil dari module {Todo}
+        text: req.body.text //req.body.text : mengambil data yang diinputkan
     });
 
     todo.save().then((doc) => {
         res.send(doc)
     }, (e) => {
-        res.status(400).send(e);
+        res.status(400).send(e); //Method status 400 itu httpnya kalo misalnya error
     })
+
 })
 
-app.get('/todos', (req, res) => {
-    Todo.find().then((todos) => {
-        res.send({ todos });
-    }, (e) => {
-        res.status(400).send(e);
-    })
-})
+// GET /todos/123kakdamdksad
 
 app.listen(3000, () => {
     console.log('Started on port 3000');
