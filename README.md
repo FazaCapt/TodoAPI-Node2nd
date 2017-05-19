@@ -27,7 +27,7 @@
 25. Testing DELETE /todos/:id 10:18
 26. Updating a Resource - PATCH /todos/:id 14:19
 27. Testing PATCH /todos/:id 11:01
-28. Creating a Test Database 
+28. Creating a Test Database || creat 'export NODE_ENV=test || SET NODE_ENV=test' di package.json
 
 Install:
 1. MongoDB 'https://www.mongodb.com/'
