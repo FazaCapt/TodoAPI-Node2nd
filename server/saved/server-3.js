@@ -1,5 +1,3 @@
-// Updating a Resource - PATCH /todos/:id 14:19
-const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongodb');
@@ -47,6 +45,14 @@ app.get('/todos/:id', (req, res) => {
     })
 })
 
+// get id
+// validate the id -> not valid? return 404
+// remove todo by id
+// success
+// if no doc , send 404
+// if doc, send doc back with 200
+// error
+// 400 with empty body
 app.delete('/todos/:id', (req, res) => {
     var id = req.params.id;
     if (!ObjectID.isValid(id)) {
@@ -54,7 +60,7 @@ app.delete('/todos/:id', (req, res) => {
     }
     Todo.findByIdAndRemove(id).then((todo) => {
         if (!todo) {
-            return res.status(404).send();
+            return res.status(404).send(); // ini tadi lupa ngasih tanda 404
         }
 
         res.send({ todo });
@@ -62,44 +68,8 @@ app.delete('/todos/:id', (req, res) => {
         res.status(400).send();
     });
 })
-
-app.patch('/todos/:id', (req, res) => {
-    var id = req.params.id;
-    var body = _.pick(req.body, ['text', 'completed']);
-
-    if (!ObjectID.isValid(id)) {
-        return res.status(404).send();
-    }
-
-    if (_.isBoolean(body.completed) && body.completed) {
-        body.completedAt = new Date().getTime();
-    } else {
-        body.completed = false;
-        body.completedAt = null;
-    }
-    Todo.findOneAndUpdate(id, { $set: body }, { new: true }).then((todo) => { //bodynya lupa dikasih tadi
-        if (!todo) {
-            return res.status(404).send();
-        }
-
-        res.send({ todo });
-    }).catch((e) => {
-        res.status(400).send();
-    })
-})
-
-
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
 })
 
 module.exports = { app };
-
-
-//Penjelasan:
-// _.pick(object, [paths]):
-// Membuat objek yang terdiri dari objek objek yang dipilih.
-//      object (object): Objek sumber.
-//      [path] (... (string | string [])): Jalur properti untuk dipilih.
-// return
-// (object): Mengembalikan objek baru.

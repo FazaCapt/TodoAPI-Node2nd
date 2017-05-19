@@ -6,7 +6,7 @@ const { app } = require('./../server');
 const { Todo } = require('./../models/todo');
 
 const todos = [{
-    _id: new ObjectID(), //Jangan lupa tutup kuungnya
+    _id: new ObjectID(), //Jangan lupa tutup kurungnya
     text: 'First test todo'
 }, {
     _id: new ObjectID(), //Jangan lupa tutup kuungnya

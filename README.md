@@ -41,6 +41,7 @@ Install:
 9. npm install mocha 'https://www.npmjs.com/package/mocha'
 10. npm install supertest 'https://www.npmjs.com/package/supertest'
 11. npm install nodemon 'https://www.npmjs.com/package/nodemon'
+12. npm install -- save lodash 'https://www.npmjs.com/package/lodash'
 
 
 Documentation: 
@@ -54,6 +55,7 @@ Documentation:
 8. mongoose schema: 'http://mongoosejs.com/docs/guide.html'
 9. http status : 'https://httpstatuses.com/'
 10. mongoose queris: 'http://mongoosejs.com/docs/queries.html'
+11. lodash: 'https://lodash.com/docs/4.17.4'
 
 Heroku:
 1. https://gentle-eyrie-81894.herokuapp.com/
@@ -93,4 +95,12 @@ Penjelasan:
     - Bagian tubuh lain yang mungkin Anda minati:
         - body 'https://www.npmjs.com/package/body#readme'
         - co-body 'https://www.npmjs.com/package/co-body#readme'
+4. Lodash 'https://lodash.com/'
+    - Perpustakaan utilitas JavaScript modern memberikan modularitas, kinerja & ekstra.
+    - Mengapa Lodash?
+        - Lodash membuat JavaScript lebih mudah dengan mengambil kerumitan dari bekerja dengan array, angka, objek, string, dll. 
+        - Metode modular Lodash sangat bagus untuk:
+            - Iterasi array, objek, & string
+            - Memanipulasi & nilai pengujian
+            - Membuat fungsi komposit
 
