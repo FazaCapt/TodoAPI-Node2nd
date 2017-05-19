@@ -67,6 +67,7 @@ cara makenya:
 1. node server/server.js
 2. npm start
 3. npm run test-watch
+4. npm test
 
 Postman: 
 1. https://www.getpostman.com/
