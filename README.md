@@ -21,7 +21,7 @@
 19. Mongoose Queries and ID Validation 16:26
 20. Getting an Individual Resource - GET /todos/:id 13:28
 21. Testing GET /todos/:id 10:53
-22. Deploy API to Heroku 9:57
+22. Deploy API to Heroku 9:57 || buat port baru || buat npm start di package.json || ini harus dilihat lagi kalo mau coba tesitng ke heroku
 23. Postman Environments 5:58
 24. Delete a Resource - DELETE /todos/:id 14:54
 25. Testing DELETE /todos/:id 10:18
@@ -55,6 +55,20 @@ Documentation:
 9. http status : 'https://httpstatuses.com/'
 10. mongoose queris: 'http://mongoosejs.com/docs/queries.html'
 
+Heroku:
+1. https://gentle-eyrie-81894.herokuapp.com/
+2. heroku logs
+3. heroku open
+4. API HEROKU BELUM DICOBA SAMA SEKALI!
+
+cara makenya:
+1. node server/server.js
+2. npm start
+3. npm run test-watch
+
+Postman: 
+1. https://www.getpostman.com/
+2. kalo pake environtmen harus pake {{url}}/todos => contoh.
 Penjelasan:
 1. noSql mongoDB
     - Collection

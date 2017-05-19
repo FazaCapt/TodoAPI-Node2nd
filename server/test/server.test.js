@@ -1,21 +1,17 @@
-// Testing POST /todos 19:50
-// Testing GET /todos 6:14
-
 const expect = require('expect');
 const request = require('supertest');
 const { ObjectID } = require('mongodb');
 
-var { app } = require('./../server');
-var { Todo } = require('./../models/todo');
+const { app } = require('./../server');
+const { Todo } = require('./../models/todo');
 
 const todos = [{
-    _id: new ObjectID,
-    text: 'First text todo'
+    _id: new ObjectID(), //Jangan lupa tutup kuungnya
+    text: 'First test todo'
 }, {
-    _id: new ObjectID,
-    text: 'Second text todo'
+    _id: new ObjectID(), //Jangan lupa tutup kuungnya
+    text: 'Second test todo'
 }];
-
 
 beforeEach((done) => { //Berjalan sebelum setiap tes di blok ini
     Todo.remove({}).then(() => {
@@ -105,3 +101,43 @@ describe('GET /todos/:id', () => {
             .end(done);
     })
 })
+
+describe('DELETE /todos/:id', () => {
+    it('Should remove a todo', (done) => {
+        var hexId = todos[1]._id.toHexString();
+
+        request(app)
+            .delete(`/todos/${hexId}`) //Seharusnya delete tadi get
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.todo._id).toBe(hexId);
+            })
+            .end((err, res) => {
+                if (err) {
+                    return done(err);
+                }
+                // Query database using findById toNotExist
+                // expect(null).toNotExist();
+                //Penempatan code harus tepat jangan sampe salah taro code
+                Todo.findById(hexId).then((todo) => {
+                    expect(todo).toNotExist();
+                    done();
+                }).catch((e) => done(e));
+            });
+    });
+    it('Should return 404 if todo not found', (done) => {
+        var hexId = new ObjectID().toHexString();
+
+        request(app)
+            .delete(`/todos/${hexId}`)
+            .expect(404)
+            .end(done);
+    });
+
+    it('Should return 404 if object id is invalid', (done) => {
+        request(app)
+            .delete('/todos/123abc')
+            .expect(404)
+            .end(done);
+    });
+});
